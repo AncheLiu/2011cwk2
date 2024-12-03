@@ -1,0 +1,119 @@
+/* body */
+.profile-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* profile */
+.profile-header {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 40px;
+    margin: 0;
+}
+
+.username-title {
+    color: #fff;
+    font-size: 40px;
+    margin: 0;
+}
+
+/* like or dislike */
+.reactions-container {
+    display: flex;
+    gap: 30px;
+}
+
+.reaction-section {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.reaction-section h2 {
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* move list */
+.movie-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* moveie card */
+.movie-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+}
+
+.movie-card a {
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+
+.movie-card img {
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.movieinfo {
+    padding: 15px;
+}
+
+.movieinfo h3 {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
+.movieinfo p {
+    font-size: 15px;
+    color: #ccc;
+    margin: 0;
+}
+
+/* no movies */
+.nomovies {
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+}
+
+/* different screeen */
+@media (max-width: 768px) {
+    .reactions-container {
+        flex-direction: column;
+    }
+
+    .reaction-section {
+        margin-bottom: 20px;
+    }
+
+    .username-title {
+        font-size: 30px;
+    }
+
+    .movie-card a {
+        flex-direction: column;
+    }
+
+    .movie-card img {
+        width: 100%;
+        height: 200px;
+    }
+}

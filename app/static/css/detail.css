@@ -1,0 +1,39 @@
+.movie-detail-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #ccc;
+}
+
+.reaction-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.reaction-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+}
+
+.like.active {
+    color: #ff4757;
+}
+
+.dislike.active {
+    color: #26c073;
+}
+
+.reaction-count {
+    margin-left: 8px;
+    font-size: 18px;
+    color: #ff0000;
+}
+
+.reaction-container p {
+    margin: 0;
+    padding: 0;
+}

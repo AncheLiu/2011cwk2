@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="movie-detail-container">
+    <!-- movies description -->
+    <div class="movie-detail-content">
+        <div class="movie-detail-text">
+            <h1 class="movie-title">{{ movie.title }}</h1>
+            <p class="movie-description">{{ movie.description }}</p>
+        </div>
+        
+        <div class="movie-detail-image">
+            <img src="{{ movie.image_url }}" alt="{{ movie.title }}">
+        </div>
+    </div>
+
+    <!-- like button -->
+    <div class="reaction-container">
+        <p class="reaction-btn like {% if user_reaction and user_reaction.reaction == 1 %}active{% endif %}" 
+           data-movie-id="{{ movie.id }}" data-type="like">
+            &#10084; <span class="reaction-count">{{ like_count }}</span>
+        </p>
+        <p class="reaction-btn dislike {% if user_reaction and user_reaction.reaction == 2 %}active{% endif %}" 
+           data-movie-id="{{ movie.id }}" data-type="dislike">
+            &#128078; <span class="reaction-count">{{ dislike_count }}</span>
+        </p>
+    </div>
+</div>
+{% endblock %}

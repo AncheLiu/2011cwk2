@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="profile-container">
+    <!-- username -->
+    <div class="profile-header">
+        <h1 class="username-title">Profile</h1>
+    </div>
+
+    <!-- all movies viewed -->
+    <div class="reactions-container">
+        <!-- like list -->
+        <div class="reaction-section">
+            <h2>Liked Movies</h2>
+            <div class="movie-list">
+                {% for reaction in liked_movies %}
+                <div class="movie-card">
+                    <a href="{{ url_for('movie_detail', movie_id=reaction.movie.id) }}">
+                        <img src="{{ reaction.movie.image_url }}" alt="{{ reaction.movie.title }}">
+                        <div class="movieinfo">
+                            <h3>{{ reaction.movie.title }}</h3>
+                            <p>{{ reaction.movie.description | truncate(100) }}</p>
+                        </div>
+                    </a>
+                </div>
+                {% else %}
+                <p class="nomovies">No liked movies yet</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- dislike list -->
+        <div class="reaction-section">
+            <h2>Disliked Movies</h2>
+            <div class="movie-list">
+                {% for reaction in disliked_movies %}
+                <div class="movie-card">
+                    <a href="{{ url_for('movie_detail', movie_id=reaction.movie.id) }}">
+                        <img src="{{ reaction.movie.image_url }}" alt="{{ reaction.movie.title }}">
+                        <div class="movie-info">
+                            <h3>{{ reaction.movie.title }}</h3>
+                            <p>{{ reaction.movie.description | truncate(100) }}</p>
+                        </div>
+                    </a>
+                </div>
+                {% else %}
+                <p class="nomovies">No disliked movies yet</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

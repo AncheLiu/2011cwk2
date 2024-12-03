@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="login">
+    <h1>User Register</h1>
+    <form method="POST">
+        <input type="text" name="username" placeholder="Please enter username"  aria-label="username"/>
+        <br/>
+        <input type="password" name="password" placeholder="Please enter password"  aria-label="password"/>
+        <br/>
+        {% if message %}
+        <div class="loginmessage">{{message}}</div>
+        {% endif %}
+        <br/>
+        <input type="submit" value="Register" href="{{ url_for('login') }}"/>
+        <br/>
+        <a href="{{ url_for('login') }}">Login</a>
+    </form>
+</div>
+{% endblock %}
